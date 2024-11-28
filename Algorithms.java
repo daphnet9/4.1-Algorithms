@@ -8,8 +8,9 @@ public class Algorithms {
     public static void main(String[] args) throws FileNotFoundException {
         f = new File("Numbers.txt");
         int odds = odds();
-        // int evens = evens();
+        int evens = evens();
         System.out.println(odds);
+        System.out.println(evens);
         s.close();
     }
 
@@ -21,5 +22,15 @@ public class Algorithms {
                 odds++;
         }
         return odds;
-    }    
+    }
+
+    public static int evens() throws FileNotFoundException {
+        s = new Scanner(f);
+        int evens = 0;
+        while (s.hasNext()) {
+            if (s.nextInt() % 2 == 0)
+                evens++;
+        }
+        return evens;
+    }
 }
